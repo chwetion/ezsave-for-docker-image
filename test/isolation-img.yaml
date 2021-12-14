@@ -1,0 +1,9 @@
+packages:
+- file: isolation.tar
+  content:
+  - name: problem-pod-controller:v1.0.1
+    from: 10.1.11.15:8443/k8s-deploy/problem-pod-controller:v1.0.1
+  - name: node-isolation-agent:v1.0.0
+    from: 10.1.11.15:8443/k8s-deploy/node-isolation-agent:v1.0.0
+  - name: node-isolation-controller:v1.0.1
+    from: 10.1.11.15:8443/k8s-deploy/node-isolation-controller:v1.0.1
