@@ -1,0 +1,26 @@
+defaultTarget:
+  registry: 10.1.30.99:8443
+  project: harbor-system
+defaultFrom:
+  registry: 10.1.11.15:8443
+  project: harborv2
+packages:
+  - file: harborv2.tar
+    content:
+      - name: chartmuseum-photon:v2.2.3
+      - name: harbor-core:v2.2.3-hc.1
+      - name: harbor-jobservice:v2.2.3
+      - name: nginx-photon:v2.2.3
+      - name: notary-server-photon:v2.2.3
+      - name: notary-signer-photon:v2.2.3
+      - name: harbor-portal:v2.2.3
+      - name: redis-photon:v2.2.3
+      - name: registry-photon:v2.2.3
+      - name: harbor-registryctl:v2.2.3
+      - name: trivy-adapter-photon:v2.2.3
+      - name: harbor-db:v2.2.3
+      - name: spilo-12:1.6-p3
+      - name: harbor-initialize:2.2.3
+      - name: postgres-operator:v1.5.0-hc.2
+      - name: logical-backup:master-58
+      - name: pgsql-logical-backup-cleanup:2.2.3

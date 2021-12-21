@@ -25,10 +25,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// saveCmd represents the save command
-var saveCmd = &cobra.Command{
-	Use:   "save",
-	Short: "easy for saving docker image",
+// forwardCmd represents the forward command
+var forwardCmd = &cobra.Command{
+	Use:   "forward",
+	Short: "forward images from repository to another",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		filePath := cmd.Flag("file").Value.String()
@@ -42,22 +42,21 @@ var saveCmd = &cobra.Command{
 			fmt.Printf("%s\n", err)
 			os.Exit(1)
 		}
-		client.Save()
+		client.Forward()
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(saveCmd)
+	rootCmd.AddCommand(forwardCmd)
 
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// saveCmd.PersistentFlags().String("foo", "", "A help for foo")
+	// forwardCmd.PersistentFlags().String("foo", "", "A help for foo")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// saveCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	saveCmd.Flags().StringP("file", "f", "", "Save image configuration file")
-	// saveCmd.Flags().BoolP("local", "", false, "use local image to create compressed package")
+	// forwardCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	forwardCmd.Flags().StringP("file", "f", "", "Load image configuration file")
 }
